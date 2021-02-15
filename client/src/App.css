@@ -1,5 +1,6 @@
 .App {
-  background-color: black;
+  background-color: #19181A;
+  text-align: center;
 }
 
 img {
@@ -12,29 +13,90 @@ img {
 
 h1 {
   font-family: "American Typewriter", Times, serif;
+  font-size: 100px;
+  margin: 0;
+}
+
+h2 {
+  font-family: "American Typewriter", Times, serif;
+  font-size: 30px;
+  text-align: right;
+  margin: 0;
+}
+
+hr {
+  width: 80%;
 }
 
 .header {
-  background-color: red;
+  /* background-color: red; */
+  display: inline-block;
+  height: 175px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.nav-box {
+  display: inline-block;
+  background-color: blue;
+  height: 100px;
+  width: 75%;
   padding: 0;
+  text-align: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+}
+
+.nav-link-selected {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 15px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* height: 150px; */
   justify-content: space-around;
-  background-color: grey;
 }
 
 .square {
-  background-color: white;
-  height: 100%;
-  width: 20%;
+  /* background-color: white; */
+  /* height: 100%; */
+  text-align: center;
+}
+
+img {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+}
+
+.square-label {
+  color: white;
+  font-size: 17px;
+}
+
+.square-label-hover {
+  color: green;
+  font-size: 17px;
 }
 
 .footer {
   background-color: red;
+  height: 150px;
   padding: 0;
+  text-align: center;
 }

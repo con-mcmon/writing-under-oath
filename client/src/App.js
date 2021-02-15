@@ -27,74 +27,94 @@ import crayonDrawing from './images/squares/square-18.jpg';
 import lightFixture from './images/squares/square-19.jpg';
 import pineTree from './images/squares/square-20.jpg';
 import lime from './images/squares/square-21.jpg';
+import switchBacks from './images/squares/square-22.jpg';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.images = [
-      portrait,
-      fish,
-      artMuseum,
-      flower,
-      samuel,
-      leaves,
-      rainDrive,
-      pinkFlower,
-      motorcycle,
-      waterTower,
-      horse,
-      wreath,
-      rocks,
-      lightSplatter,
-      cardinal,
-      tiredCat,
-      basketCat,
-      crayonDrawing,
-      lightFixture,
-      pineTree,
-      lime
+    this.content = [
+      {image: portrait, label: 'Dr. K'},
+      {image: fish, label: 'Accolades'},
+      {image: artMuseum, label: 'Editorial Services'},
+      {image: flower, label: 'Rhetorical Origins'},
+      {image: samuel, label: 'Rhetoric and Poetics'},
+      {image: switchBacks, label: 'Switchbacks'},
+      {image: rainDrive, label: 'Haiku Autobiography'},
+      {image: pinkFlower, label: 'Index Of Articles'},
+      {image: motorcycle, label: 'Six Stories'},
+      {image: waterTower, label: 'Fake News'},
+      {image: horse, label: 'Living Under Oath'},
+      {image: wreath, label: 'Reality Under Oath'},
+      {image: rocks, label: 'Union'},
+      {image: lightSplatter, label: ''},
+      {image: cardinal, label: ''},
+      {image: tiredCat, label: ''},
+      {image: basketCat, label: ''},
+      {image: crayonDrawing, label: ''},
+      {image: lightFixture, label: ''},
+      {image: pineTree, label: ''},
+      {image: lime, label: ''},
+      {image: leaves, label: ''},
     ];
     this.state = {};
+  }
+
+  buildContentRoutes = () => {
+    const links = this.content.filter((item) => item.label).map((item) => ({
+                                                                            label: item.label,
+                                                                            path: `/${item.label.toLowerCase().replace(/ /g, '-')}`
+                                                                          }));
+    return links.map(({label, path}) => {
+        return (
+            <Route path={path} key={label}>
+              <Content links={links} label={label} />
+            </Route>
+        )
+      })
   }
 
   render() {
     return (
       <div className='App'>
-        <div className='header'>
-          <h1>WritingUnderOath</h1>
-        </div>
-
-        <Row images={this.images.slice(0,4)} />
-        <Row images={this.images.slice(4,8)} />
-        <Row images={this.images.slice(8,12)} />
-        <Row images={this.images.slice(12,16)} />
-        <Row images={this.images.slice(16,20)} />
-
-        <div className='footer'>
-          <p>Footer</p>
-        </div>
-
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+          {this.buildContentRoutes()}
           <Route path="/">
-            <Home />
+            <Home images={this.content} />
           </Route>
         </Switch>
       </div>
     );
   }
-
 }
+
+
+
+function Home(props) {
+  let rows = [];
+  for (let x = 0; x < props.images.length; x+=4) {
+    rows.push(<Row images={props.images.slice(x, x + 4)} />)
+  }
+
+  return (
+    <div className='App'>
+      <div className='header'>
+        <h1>WritingUnderOath</h1>
+        <h2>Serious Theories of Nonfiction</h2>
+      </div>
+      <hr/>
+      {rows}
+      <div className='footer'>
+        <p>Footer</p>
+      </div>
+    </div>
+  );
+}
+
 
 function Row(props) {
   return (
     <div className='row'>
-      {props.images.map((img) => <Square image={img} />)}
+      {props.images.map((img) => <Square image={img.image} label={img.label} />)}
     </div>
   )
 }
@@ -102,29 +122,44 @@ function Row(props) {
 class Square extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      hovered: false
+    };
   }
 
   render() {
+    const label = this.props.label;
+    const image =
+      <img
+        src={this.props.image}
+        alt={label}
+        onMouseOver={() => this.setState( {hovered: true} )}
+        onMouseOut={() => this.setState( {hovered: false} )} />;
+
     return (
       <div className='square'>
-        <img src={this.props.image} />
+        {label ? <Link to={`/${label.toLowerCase().replace(/ /g, '-')}`}>{image}</Link> : image}
+        <span className={this.state.hovered ? 'square-label-hover' : 'square-label'}>{label}</span>
       </div>
     )
-
   }
 }
 
-function Home() {
-  return <h2>Home</h2>;
+function NavBox(props) {
+  return (
+    <div className='nav-box'>
+      <Link to='/' className='nav-link'>Home</Link>
+      {props.links.map(({label, path}) => <Link to={path} className={label === props.selected ? 'nav-link-selected' : 'nav-link'} key={label}>{label}</Link>)}
+    </div>
+  )
 }
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
+function Content(props) {
+  return (
+    <div className='=App'>
+      <NavBox links={props.links} selected={props.label}/>
+    </div>
+  )
 }
 
 export default App;
