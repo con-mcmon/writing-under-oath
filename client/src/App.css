@@ -12,16 +12,22 @@ img {
 }
 
 h1 {
+  color: white;
   font-family: "American Typewriter", Times, serif;
   font-size: 100px;
   margin: 0;
 }
 
 h2 {
+  color: white;
   font-family: "American Typewriter", Times, serif;
   font-size: 30px;
   text-align: right;
   margin: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 hr {
@@ -92,6 +98,10 @@ img {
 .square-label-hover {
   color: green;
   font-size: 17px;
+}
+
+.content {
+  background-color: white;
 }
 
 .footer {
