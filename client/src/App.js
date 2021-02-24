@@ -13,7 +13,7 @@ function App(props) {
     const links = squareContent.filter((item) => item.label);
     return links.map(({label, path}) => {
         return (
-            <Route path={`/${path}`} key={label}>
+            <Route exact path={`/${path}`} key={label}>
               <Content links={links} name={label} />
             </Route>
         )
@@ -24,6 +24,7 @@ function App(props) {
     <div className='App'>
       <Switch>
         {buildContentRoutes()}
+
         <Route path="/">
           <Home content={squareContent} />
         </Route>

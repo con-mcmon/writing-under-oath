@@ -3,6 +3,7 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
   useRouteMatch
 } from "react-router-dom";
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -73,9 +74,52 @@ function DrKContent(props) {
   )
 }
 
-function Accolades(props) {
-  return <div></div>
+class Accolades extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+      image: null
+    }
   }
+
+  handleClick = (e) => {
+    this.setState({
+      image: accoladeContent[e.target.name],
+      modalOpen: true
+    })
+  }
+
+  onModalClose = () => this.setState({modalOpen: false});
+
+  renderButtons = () => {
+    return (
+      accoladeContent.map(({title}, index) => {
+        return (
+          <li>
+            <button name={index} onClick={this.handleClick}>{title}</button>
+          </li>
+        )
+      })
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.renderButtons()}
+        </ul>
+        <ReactModal isOpen={this.state.modalOpen} onRequestClose={this.onModalClose}>
+          {this.state.image ? <Accolade
+            file={this.state.image.file}
+            title={this.state.image.title}
+            type={this.state.image.type} /> : null}
+        </ReactModal>
+      </div>
+    )
+  }
+}
 
 function Accolade(props) {
   const image = (props.type === 'pdf') ? (
