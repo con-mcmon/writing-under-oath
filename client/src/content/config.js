@@ -1,68 +1,19 @@
-// square images
-import portrait from './images/squares/square-1.jpg';
-import fish from './images/squares/square-2.jpg';
-import artMuseum from './images/squares/square-3.jpg';
-import flower from './images/squares/square-4.jpg';
-import samuel from './images/squares/square-5.jpg';
-import leaves from './images/squares/square-6.jpg';
-import rainDrive from './images/squares/square-7.jpg';
-import pinkFlower from './images/squares/square-8.jpg';
-import motorcycle from './images/squares/square-9.jpg';
-import waterTower from './images/squares/square-10.jpg';
-import horse from './images/squares/square-11.jpg';
-import wreath from './images/squares/square-12.jpg';
-import rocks from './images/squares/square-13.jpg';
-import lightSplatter from './images/squares/square-14.jpg';
-import cardinal from './images/squares/square-15.jpg';
-import tiredCat from './images/squares/square-16.jpg';
-import basketCat from './images/squares/square-17.jpg';
-import crayonDrawing from './images/squares/square-18.jpg';
-import lightFixture from './images/squares/square-19.jpg';
-import pineTree from './images/squares/square-20.jpg';
-import lime from './images/squares/square-21.jpg';
-import switchBacks from './images/squares/square-22.jpg';
-
 // Accolades
-import accolade1 from './content/accolades/1.pdf';
-import accolade2 from './content/accolades/2.pdf';
-import accolade3 from './content/accolades/3.jpg';
-import accolade4 from './content/accolades/4.jpg';
-import accolade5 from './content/accolades/5.jpg';
-import accolade6 from './content/accolades/6.jpg';
-import accolade7 from './content/accolades/7.jpg';
-import accolade8 from './content/accolades/8.pdf';
-import accolade9 from './content/accolades/9.jpg';
-import accolade10 from './content/accolades/10.pdf';
-import accolade11 from './content/accolades/11.jpg';
-import accolade12 from './content/accolades/12.jpg';
-import accolade13 from './content/accolades/13.jpg';
-import accolade14 from './content/accolades/14.jpg';
-import accolade15 from './content/accolades/15.jpg';
-
-const squareContent = [
-    {image: portrait, label: 'Dr. K', path: 'dr-k'},
-    {image: fish, label: 'Accolades', path: 'accolades'},
-    {image: artMuseum, label: 'Tutorial Services', path: 'tutorial-services'},
-    {image: flower, label: 'Rhetorical Origins', path: 'rhetorical-origins'},
-    {image: samuel, label: 'Rhetoric and Poetics', path: 'rhetoric-and-poetics'},
-    {image: switchBacks, label: 'Switchbacks', path: 'switchbacks'},
-    {image: rainDrive, label: 'Haiku Autobiography', path: 'haiku-autobiography'},
-    {image: pinkFlower, label: 'Index Of Articles', path: 'index-of-articles'},
-    {image: motorcycle, label: 'Six Stories', path: 'six-stories'},
-    {image: waterTower, label: 'Fake News', path: 'fake-news'},
-    {image: horse, label: 'Living Under Oath', path: 'living-under-oath'},
-    {image: wreath, label: 'Reality Under Oath', path: 'reality-under-oath'},
-    {image: rocks, label: 'Union', path: 'union'},
-    {image: lightSplatter},
-    {image: cardinal},
-    {image: tiredCat},
-    {image: basketCat},
-    {image: crayonDrawing},
-    {image: lightFixture},
-    {image: pineTree},
-    {image: lime},
-    {image: leaves},
-  ];
+import accolade1 from './accolades/1.pdf';
+import accolade2 from './accolades/2.pdf';
+import accolade3 from './accolades/3.jpg';
+import accolade4 from './accolades/4.jpg';
+import accolade5 from './accolades/5.jpg';
+import accolade6 from './accolades/6.jpg';
+import accolade7 from './accolades/7.jpg';
+import accolade8 from './accolades/8.pdf';
+import accolade9 from './accolades/9.jpg';
+import accolade10 from './accolades/10.pdf';
+import accolade11 from './accolades/11.jpg';
+import accolade12 from './accolades/12.jpg';
+import accolade13 from './accolades/13.jpg';
+import accolade14 from './accolades/14.jpg';
+import accolade15 from './accolades/15.jpg';
 
 const cvContent = [
   {
@@ -286,80 +237,93 @@ const cvContent = [
 
 const accoladeContent = [
   {
-    'title': 'Professor Lisa Phillips, Associate Professor, Digital Media & Journalism',
-    'file': accolade1,
-    'type': 'pdf'
+    title: 'Professor Lisa Phillips, Associate Professor, Digital Media & Journalism',
+    file: accolade1,
+    type: 'pdf'
   },
   {
-    'title': 'Dr. Patrick Meanor, Distinguished Teaching Professor of English',
-    'file': accolade2,
-    'type': 'pdf'
+    title: 'Dr. Patrick Meanor, Distinguished Teaching Professor of English',
+    file: accolade2,
+    type: 'pdf'
   },
   {
-    'title': 'William L. Corsa, President, Specialty Book Marketing',
-    'file': accolade3,
-    'type': 'jpg'
+    title: 'William L. Corsa, President, Specialty Book Marketing',
+    file: accolade3,
+    type: 'jpg'
   },
   {
-    'title': 'William L. Corsa, President, Specialty Book Marketing',
-    'file': accolade4,
-    'type': 'jpg'
+    title: 'William L. Corsa, President, Specialty Book Marketing',
+    file: accolade4,
+    type: 'jpg'
   },
   {
-    'title': 'Charlotte Zoe Walker, Professor Emerita, English Department, SUNY Oneonta',
-    'file': accolade5,
-    'type': 'jpg'
+    title: 'Charlotte Zoe Walker, Professor Emerita, English Department, SUNY Oneonta',
+    file: accolade5,
+    type: 'jpg'
   },
   {
-    'title': 'Judy E. Walters, Ph.D., President, Diablo Valley College',
-    'file': accolade6,
-    'type': 'jpg'
+    title: 'Judy E. Walters, Ph.D., President, Diablo Valley College',
+    file: accolade6,
+    type: 'jpg'
   },
   {
-    'title': 'Leslie Rubinkowski M.A., Visiting Lecturer, Pittsburgh University',
-    'file': accolade7,
-    'type': 'jpg'
+    title: 'Leslie Rubinkowski M.A., Visiting Lecturer, Pittsburgh University',
+    file: accolade7,
+    type: 'jpg'
   },
   {
-    'title': 'John Tallmadge, Ph.D.',
-    'file': accolade8,
-    'type': 'pdf'
+    title: 'John Tallmadge, Ph.D.',
+    file: accolade8,
+    type: 'pdf'
   },
   {
-    'title': 'P. Neal Meier, Ph.D., Director of Alumni Relations',
-    'file': accolade9,
-    'type': 'jpg'
+    title: 'P. Neal Meier, Ph.D., Director of Alumni Relations',
+    file: accolade9,
+    type: 'jpg'
   },
   {
-    'title': 'Walter vom Saal, Ph.D., Vice President for Academic Affairs and Professor of Psychology',
-    'file': accolade10,
-    'type': 'pdf'
+    title: 'Walter vom Saal, Ph.D., Vice President for Academic Affairs and Professor of Psychology',
+    file: accolade10,
+    type: 'pdf'
   },
   {
-    'title': 'J.J. Yore, Senior Editor, Marketplace',
-    'file': accolade11,
-    'type': 'jpg'
+    title: 'J.J. Yore, Senior Editor, Marketplace',
+    file: accolade11,
+    type: 'jpg'
   },
   {
-    'title': 'Susan Miller, Scripps Howard',
-    'file': accolade12,
-    'type': 'jpg'
+    title: 'Susan Miller, Scripps Howard',
+    file: accolade12,
+    type: 'jpg'
   },
   {
-    'title': 'Michelle DeChant, American Demographics Inc.',
-    'file': accolade13,
-    'type': 'jpg'
+    title: 'Michelle DeChant, American Demographics Inc.',
+    file: accolade13,
+    type: 'jpg'
   },
   {
-    'title': 'Dr. Iam Marshall, Professor of English and Environment Studies',
-    'file': accolade14,
-    'type': 'jpg'
+    title: 'Dr. Iam Marshall, Professor of English and Environment Studies',
+    file: accolade14,
+    type: 'jpg'
   },
   {
-    'title': 'Rees F. Warring, Pastor',
-    'file': accolade15,
-    'type': 'jpg'
+    title: 'Rees F. Warring, Pastor',
+    file: accolade15,
+    type: 'jpg'
   }
 ]
 
-export { squareContent, cvContent, accoladeContent };
+const tutorialServicesContent = {
+  header: 'Complete Editorial Services for Nonfiction Manuscripts',
+  listItems: [
+    'Dissertations',
+    'Books',
+    'Brochures',
+    'Thesis',
+    'Articles',
+    'Term Papers'
+  ],
+  paragraphs: ['We charge $1 per page for proofreading, grammatical corrections, and in-depth fact checking. We can add literary tweaking to your manuscript to make it more beautiful and readable. We serve students, academics, professionals, businesses.', 'To submit your manuscript for a price quote and analysis, please provide a $21 reader fee to be deducted from the final cost or your completely edited manuscript. In the event that you choose not to leave your piece with us for editing, your $21 will still get you something of value: A one-page review of the strengths and weaknesses of your writing, where and upon what to focus, and our professional suggestions about the overall potential evolution that your manuscript might achieve.', 'Please send your manuscript along with a $21 reader fee payable through PayPal via:', 'drkurtz@mac.com']
+}
+
+export { cvContent, accoladeContent, tutorialServicesContent };

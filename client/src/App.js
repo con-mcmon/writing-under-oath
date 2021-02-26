@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Content from './Content';
-import {squareContent} from './config';
+import squares from './content/squares';
 
 function App(props) {
   const buildContentRoutes = () => {
-    const links = squareContent.filter((item) => item.label);
+    const links = squares.filter((item) => item.label);
     return links.map(({label, path}) => {
         return (
             <Route exact path={`/${path}`} key={label}>
@@ -24,9 +24,8 @@ function App(props) {
     <div className='App'>
       <Switch>
         {buildContentRoutes()}
-
         <Route path="/">
-          <Home content={squareContent} />
+          <Home content={squares} />
         </Route>
       </Switch>
     </div>

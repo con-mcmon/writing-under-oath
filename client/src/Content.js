@@ -3,15 +3,15 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
-  useRouteMatch
 } from "react-router-dom";
 import { Document, Page, pdfjs } from 'react-pdf';
 import ReactModal from 'react-modal';
 import './App.css';
-import {cvContent, accoladeContent} from './config'
-
-import drK from './images/dr-k.jpg';
+import { cvContent, accoladeContent, tutorialServicesContent } from './content/config';
+import rhetoricalOrigins from './content/rhetorical-origins';
+import rhetoricAndPoetics from './content/rhetoric-and-poetics';
+import switchbacks from './content/switchbacks';
+import drK from './content/images/dr-k.jpg';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -19,11 +19,24 @@ function Content(props) {
   let content;
   switch(props.name) {
     case 'Dr. K':
-      content = <DrKContent />;
+      content = <DrKContent content={cvContent} />;
       break;
     case 'Accolades':
-      content = <Accolades />
+      content = <Accolades content={accoladeContent} />
       break;
+    case 'Tutorial Services':
+      content = <TutorialServices content={tutorialServicesContent} />;
+      break;
+    case 'Rhetorical Origins':
+      content = <RhetoricalOrigins content={rhetoricalOrigins} />;
+      break;
+    case 'Rhetoric and Poetics':
+      content = <RhetoricAndPoetics content={rhetoricAndPoetics} />
+      break;
+    case 'Switchbacks':
+      content = <Switchbacks content={switchbacks} />
+      break;
+
     }
 
   return (
@@ -51,7 +64,7 @@ function NavBox(props) {
 }
 
 function DrKContent(props) {
-  const renderContents = cvContent.map(({header, listItems}) => {
+  const sections = props.content.map(({header, listItems}) => {
     return(
       <div>
         <h3>{header}</h3>
@@ -69,7 +82,7 @@ function DrKContent(props) {
       <h3>CURRICULUM VITAE</h3>
       <br/>
       <hr/>
-      {renderContents}
+      {sections}
     </div>
   )
 }
@@ -77,6 +90,7 @@ function DrKContent(props) {
 class Accolades extends React.Component {
   constructor(props) {
     super(props);
+    this.content = this.props.content;
     this.state = {
       modalOpen: false,
       image: null
@@ -85,16 +99,16 @@ class Accolades extends React.Component {
 
   handleClick = (e) => {
     this.setState({
-      image: accoladeContent[e.target.name],
+      image: this.content[e.target.name],
       modalOpen: true
     })
   }
 
-  onModalClose = () => this.setState({modalOpen: false});
+  onModalClose = () => this.setState({ modalOpen: false });
 
   renderButtons = () => {
     return (
-      accoladeContent.map(({title}, index) => {
+      this.content.map(({title}, index) => {
         return (
           <li>
             <button name={index} onClick={this.handleClick}>{title}</button>
@@ -104,6 +118,14 @@ class Accolades extends React.Component {
     )
   }
 
+  renderAccolade = () => {
+    return this.state.image ? <Accolade
+                                file={this.state.image.file}
+                                title={this.state.image.title}
+                                type={this.state.image.type} /> : null
+
+  }
+
   render() {
     return (
       <div>
@@ -111,10 +133,7 @@ class Accolades extends React.Component {
           {this.renderButtons()}
         </ul>
         <ReactModal isOpen={this.state.modalOpen} onRequestClose={this.onModalClose}>
-          {this.state.image ? <Accolade
-            file={this.state.image.file}
-            title={this.state.image.title}
-            type={this.state.image.type} /> : null}
+          {this.renderAccolade()}
         </ReactModal>
       </div>
     )
@@ -135,6 +154,64 @@ function Accolade(props) {
     <div>
       {image}
     </div>
+  )
+}
+
+function TutorialServices(props) {
+  const content = props.content;
+  return (
+    <div>
+      <p>{content.header}</p>
+      <ul>
+        {content.listItems.map((item) => <li>{item}</li>)}
+      </ul>
+      <div>
+        {content.paragraphs.map((item) => <p>{item}</p>)}
+      </div>
+    </div>
+  )
+}
+
+function RhetoricalOrigins(props) {
+  const content = props.content;
+
+  const renderBody = () => {
+    return(
+      content.body.map(({heading, subHeading, body}) => {
+        console.log(heading, subHeading, body);
+        return (
+          <div>
+            <h2>{heading}</h2>
+            <h3>{subHeading}</h3>
+            <p>{body}</p>
+          </div>
+        )
+      })
+    )
+  }
+
+  return (
+    <div>
+      <h1>{content.title}</h1>
+      {renderBody()}
+    </div>
+  )
+}
+
+function RhetoricAndPoetics(props) {
+  const content = props.content;
+  return (
+    <div>
+      <h1>{content.title}</h1>
+      <h2>{content.subHeading}</h2>
+      {content.body.map((item) => <p>{item}</p>)}
+    </div>
+  )
+}
+
+function Switchbacks(props) {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: props.content.title }} />
   )
 }
 
