@@ -11,6 +11,7 @@ import { cvContent, accoladeContent, tutorialServicesContent } from './content/c
 import rhetoricalOrigins from './content/rhetorical-origins';
 import rhetoricAndPoetics from './content/rhetoric-and-poetics';
 import switchbacks from './content/switchbacks';
+import haikuAutobiography from './content/haiku-autobiography';
 import drK from './content/images/dr-k.jpg';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -35,6 +36,9 @@ function Content(props) {
       break;
     case 'Switchbacks':
       content = <Switchbacks content={switchbacks} />
+      break;
+    case 'Haiku Autobiography':
+      content = <HaikuAutobiography content={haikuAutobiography} />
       break;
 
     }
@@ -211,7 +215,29 @@ function RhetoricAndPoetics(props) {
 
 function Switchbacks(props) {
   return (
-    <div dangerouslySetInnerHTML={{ __html: props.content.title }} />
+    <div>
+      {props.content()}
+    </div>
+  )
+}
+
+function HaikuAutobiography(props) {
+  const renderHaikus = () => {
+    let haikus = [];
+    for (const num in props.content) {
+      haikus.push(
+        <div>
+          <p>{num}</p>
+          {props.content[num].map((line) => <p>{line}</p>)}
+        </div>
+      )
+    }
+    return haikus;
+  }
+  return (
+    <div>
+      {renderHaikus()}
+    </div>
   )
 }
 
