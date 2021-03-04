@@ -12,6 +12,17 @@ import rhetoricalOrigins from './content/rhetorical-origins';
 import rhetoricAndPoetics from './content/rhetoric-and-poetics';
 import switchbacks from './content/switchbacks';
 import haikuAutobiography from './content/haiku-autobiography';
+import neurologyOfMemoir from './content/neurology-of-memoir';
+import ecocriticalCreativity from './content/ecocritical-creativity';
+import essayTopography from './content/essay-topography';
+import writingAndReality from './content/writing-and-reality';
+import thinkingViaObjects from './content/thinking-via-objects';
+import languageGames from './content/language-games';
+import theRightToDie from './content/the-right-to-die';
+import perfectingLanguage from './content/perfecting-language';
+import livingUnderOath from './content/living-under-oath';
+import realityUnderOath from './content/reality-under-oath';
+
 import drK from './content/images/dr-k.jpg';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -35,10 +46,40 @@ function Content(props) {
       content = <RhetoricAndPoetics content={rhetoricAndPoetics} />
       break;
     case 'Switchbacks':
-      content = <Switchbacks content={switchbacks} />
+      content = switchbacks();
       break;
     case 'Haiku Autobiography':
       content = <HaikuAutobiography content={haikuAutobiography} />
+      break;
+    case 'Neurology of Memoir':
+      content = neurologyOfMemoir();
+      break;
+    case 'Ecocritical Creativity':
+      content = ecocriticalCreativity();
+      break;
+    case 'Essay Topography':
+      content = essayTopography();
+      break;
+    case 'Writing and Reality':
+      content = writingAndReality();
+      break;
+    case 'Thinking Via Objects':
+      content = thinkingViaObjects();
+      break;
+    case 'Language Games':
+      content = languageGames();
+      break;
+    case 'The Right To Die':
+      content = theRightToDie();
+      break;
+    case 'Perfecting Language':
+      content = perfectingLanguage();
+      break;
+    case 'Living Under Oath':
+      content = livingUnderOath();
+      break;
+    case 'Reality Under Oath':
+      content = realityUnderOath();
       break;
 
     }
@@ -182,7 +223,6 @@ function RhetoricalOrigins(props) {
   const renderBody = () => {
     return(
       content.body.map(({heading, subHeading, body}) => {
-        console.log(heading, subHeading, body);
         return (
           <div>
             <h2>{heading}</h2>
@@ -209,14 +249,6 @@ function RhetoricAndPoetics(props) {
       <h1>{content.title}</h1>
       <h2>{content.subHeading}</h2>
       {content.body.map((item) => <p>{item}</p>)}
-    </div>
-  )
-}
-
-function Switchbacks(props) {
-  return (
-    <div>
-      {props.content()}
     </div>
   )
 }
