@@ -1,7 +1,7 @@
 export default () => {
   return (
     <div>
-      <h2><u>Complete Editorial Services for Nonfiction Manuscripts</u></h2>
+      <h2>Complete Editorial Services for Nonfiction Manuscripts</h2>
       <ul>
         <li>Dissertations</li>
         <li>Books</li>

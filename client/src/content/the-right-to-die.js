@@ -1,9 +1,7 @@
 export default () => {
   return (
     <div>
-      <p>How Russell Might Interpret &quot;The Right to Die&quot; in Logic and Knowledge</p>
-
-      <p></p>
+      <h2>How Russell Might Interpret &quot;The Right to Die&quot; in Logic and Knowledge</h2>
 
       <p>Unlike his student, Wittgenstein, right from the start Bertrand Russell saw no application for a logically perfect language in ordinary use. He did believe that such a language would create the best of all possible worlds, and being a mathematician, believed wholeheartedly in the feasibility of the construction of such a language. His simple conclusion was that since mathematics are infinite, language must be so too, and like mathematics, we can prove that there are facts which do not form part of our present experience. &quot;It seems certain that we shall not think of more than a finite number of arithmetical facts in the course of our lives.&quot; Thus, all we have to do is to make the words in a proposition correspond one by one with the components of the corresponding facts which we do know.</p>
 

@@ -5,6 +5,8 @@
 
 h2 {
   text-align: center;
+  font-size: 20px;
+  text-decoration: underline;
   margin: 0 0 50px 0;
 }
 
@@ -135,10 +137,19 @@ button:hover {
   margin: 25px auto;
   padding: 100px;
   text-align: justify;
+  line-height: 100%;
 }
 
 .center {
   text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .resume-list {
@@ -182,4 +193,9 @@ button:hover {
 .email {
   color: white;
   font-size: 20px;
+}
+
+.blue-text {
+  color: blue;
+  font-weight: bold;
 }

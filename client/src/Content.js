@@ -8,7 +8,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import ReactModal from 'react-modal';
 import './App.css';
 import Footer from './footer';
-import { cvContent, accoladeContent } from './content/config';
+import accoladeContent from './content/accolade-content';
+import cvContent from './content/cv-content';
 import haikuAutobiographyContent from './content/haiku-autobiography';
 import TutorialServices from './content/tutorial-services';
 import RhetoricalOrigins from './content/rhetorical-origins';
@@ -215,7 +216,6 @@ function HaikuAutobiography(props) {
   }
   return (
     <div>
-      <h2><u>Haiku Autobiography</u></h2>
       {renderHaikus()}
     </div>
   )
