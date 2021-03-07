@@ -30,7 +30,6 @@ export default [
     {image: switchBacks, label: 'Switchbacks', path: 'switchbacks'},
     {image: rainDrive, label: 'Haiku Autobiography', path: 'haiku-autobiography'},
     {image: motorcycle, label: 'Language Games', path: 'language-games'},
-    {image: waterTower, label: 'Fake News', path: 'fake-news'},
     {image: horse, label: 'Living Under Oath', path: 'living-under-oath'},
     {image: wreath, label: 'Reality Under Oath', path: 'reality-under-oath'},
     {image: pinkFlower, label: 'Neurology of Memoir', path: 'neurology-of-memoir'},
@@ -40,8 +39,9 @@ export default [
     {image: crayonDrawing, label: 'Thinking Via Objects', path: 'thinking-via-objects'},
     {image: lightFixture, label: 'The Right To Die', path: 'the-right-to-die'},
     {image: pineTree, label: 'Perfecting Language', path: 'perfecting-language'},
+    {image: waterTower},
     {image: lime},
     {image: rocks},
-    {image: leaves},
-    {image: lightSplatter}
+    // {image: leaves},
+    // {image: lightSplatter}
   ];

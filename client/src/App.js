@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Content from './Content';
+import Footer from './footer';
 import squares from './content/squares';
 
 function App(props) {
@@ -49,9 +50,7 @@ function Home(props) {
       </div>
       <hr/>
       {buildRows()}
-      <div className='footer'>
-        <p>Footer</p>
-      </div>
+      <Footer />
     </div>
   );
 }
@@ -91,7 +90,7 @@ class Square extends React.Component {
     return (
       <div>
         {label ? <Link to={this.props.path}>{image}</Link> : image}
-        <span className={this.state.hovered ? 'square-label-hover' : 'square-label'}>{label}</span>
+        <p className={this.state.hovered ? 'square-label-hover' : 'square-label'}>{label}</p>
       </div>
     )
   }

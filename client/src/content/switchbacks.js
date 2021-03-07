@@ -42,7 +42,8 @@ export default () => {
           <p>Narrative and reality actually factually correspond when the narrative, a reproduction of observed events, is accurately and representatively applied to the nonfiction. The plot is the pattern of reality that is discerned by a rational mind and translated into a narrative that can be verified in the way a map can be laid over its site. This process is conditioned by the writer’s fitness (individuated adaptation) to the environment which she hopes to reproduce in a Literary Nonfiction. When all of these criteria are met, the literary protagonist is fit for integration. What is integrated, of course, is the writer’s mimesis of reality and narrative, which in turn integrates the parataxis between the genres. The genres are integrated to form the plotted essay. I rely on a synthesis of demonstrative Literary Nonfiction theory based primarily on the works of Aristotle, Charles Darwin, Ayn Rand, Barry Lopez, Steven Pinker, and the following literary, scientific, and philosophic movements: Mimesis, Objectivism, Natural Selection, realism, and naturalism.</p>
         </div>
         <div>
-          <p>__________________________________________END OF SAMPLE</p>
+          <hr/>
+          <p>END OF SAMPLE</p>
         </div>
       </div>
       <div>

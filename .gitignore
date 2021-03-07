@@ -1,3 +1,4 @@
+client/src/content/accolades
 client/src/content/images
 
 # Logs
@@ -104,5 +105,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-client/public/square*
