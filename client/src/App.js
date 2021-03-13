@@ -48,7 +48,7 @@ function Home(props) {
         <p className='title'>WritingUnderOath</p>
         <p className='sub-title'>Serious Theories of Nonfiction</p>
       </div>
-      <hr/>
+      <hr style={{ width: '82%' }} />
       {buildRows()}
       <Footer />
     </div>

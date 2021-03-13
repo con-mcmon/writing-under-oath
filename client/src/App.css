@@ -10,10 +10,6 @@ h2 {
   margin: 0 0 50px 0;
 }
 
-hr {
-  width: 65%;
-}
-
 button {
   background-color: grey;
   color: white;
@@ -46,6 +42,7 @@ button:hover {
   object-fit: cover;
   width:250px;
   height:250px;
+  /* cursor: pointer; */
 }
 
 .square-label {
@@ -169,7 +166,7 @@ button:hover {
 
 .accolade-link:hover {
   font-style: italic;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .accolade-list {

@@ -90,7 +90,7 @@ function Content(props) {
     <div className='App'>
       <NavBox links={props.links} selected={props.name}/>
       <p className='content-title'>{props.name}</p>
-      <hr/>
+      <hr style={{ width: '65%' }} />
       <div className='content'>
         {content}
       </div>
@@ -157,9 +157,7 @@ class Accolades extends React.Component {
   renderAccoladeText = () => {
     return (
       this.content.map(({title}, index) => {
-        return (
-          <p className='accolade-link' id={index} onClick={this.handleClick}><u>{title}</u></p>
-        )
+        return <p className='accolade-link' id={index} onClick={this.handleClick}>{title}</p>
       })
     )
   }
