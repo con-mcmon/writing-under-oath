@@ -57,28 +57,36 @@ button:hover {
   font-weight: bold;
 }
 
-.title {
-  font-family: "American Typewriter", Times, serif;
-  color: white;
-  font-size: 100px;
-  margin: 0;
-}
-
-.sub-title {
-  font-family: "American Typewriter", Times, serif;
-  color: white;
-  font-size: 30px;
-  text-align: right;
-  margin: 0;
-}
-
 .header {
-  /* background-color: red; */
   display: inline-block;
   height: 175px;
   padding-bottom: 50px;
   padding-top: 50px;
+  font-size: 100px;
+}
+
+.title {
+  font-family: "American Typewriter", Times, serif;
   text-align: center;
+  color: white;
+  font-size: 100%;
+  margin: 0;
+}
+
+.title-small {
+  font-size: 60%;
+}
+
+.sub-title {
+  font-family: "American Typewriter", Times, serif;
+  text-align: right;
+  color: white;
+  font-size: 30%;
+  margin: 0;
+}
+
+.sub-title-small {
+  font-size: 20%;
 }
 
 .nav-box {
@@ -117,7 +125,7 @@ button:hover {
   margin: 0;
 }
 
-.row {
+.square-row {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
