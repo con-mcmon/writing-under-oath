@@ -138,7 +138,7 @@ button:hover {
   margin: 25px auto;
   padding: 50px;
   text-align: justify;
-  line-height: 100%;
+  line-height: 150%;
 }
 
 .center {
@@ -169,7 +169,7 @@ button:hover {
 }
 
 .accolade-link:hover {
-  font-style: italic;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -179,6 +179,7 @@ button:hover {
 
 .haiku {
   margin: 50px 0;
+  line-height: 50%;
 }
 
 .footer {
