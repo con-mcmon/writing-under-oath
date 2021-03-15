@@ -1,6 +1,8 @@
 client/src/content/accolades
 client/src/content/images
 
+.ds_store
+
 # Logs
 logs
 *.log

@@ -4,7 +4,6 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import { Document, Page, pdfjs } from 'react-pdf';
 import ReactModal from 'react-modal';
 import './App.css';
 import Footer from './footer';
@@ -27,8 +26,6 @@ import LivingUnderOath from './content/living-under-oath';
 import RealityUnderOath from './content/reality-under-oath';
 
 import drK from './content/images/dr-k.jpg';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function Content(props) {
   let content;
@@ -165,8 +162,7 @@ class Accolades extends React.Component {
   renderAccolade = () => {
     return this.state.image ? <Accolade
                                 file={this.state.image.file}
-                                title={this.state.image.title}
-                                type={this.state.image.type} /> : null
+                                title={this.state.image.title} /> : null
 
   }
 
@@ -183,18 +179,9 @@ class Accolades extends React.Component {
 }
 
 function Accolade(props) {
-  const image = (props.type === 'pdf') ? (
-    <Document file={props.file} >
-      <Page pageNumber={1} />
-      <Page pageNumber={2} />
-    </Document>
-  ) : (
-    <img src={props.file} alt={props.title} className='accolade'/>
-  );
-
   return (
     <div>
-      {image}
+      {props.file.map((file) => <img src={file} alt={props.title} className='accolade'/>)}
     </div>
   )
 }
