@@ -90,7 +90,7 @@ function Content(props) {
     <div className='App'>
       <NavBox links={props.links} selected={props.name}/>
       <p className='content-title'>{props.name}</p>
-      <hr style={{ width: '65%' }} />
+      <hr className='break-content'/>
       <div className='content'>
         {content}
       </div>

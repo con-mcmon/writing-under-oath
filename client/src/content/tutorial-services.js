@@ -1,17 +1,12 @@
 export default () => {
   return (
     <div>
-      <h2>Complete Editorial Services for Nonfiction Manuscripts</h2>
-      <ul>
-        <li>Dissertations</li>
-        <li>Books</li>
-        <li>Brochures</li>
-        <li>Thesis</li>
-        <li>Articles</li>
-        <li>Term Papers</li>
-      </ul>
-      <p>We charge $1 per page for proofreading, grammatical corrections, and in-depth fact checking. We can add literary tweaking to your manuscript to make it more beautiful and readable. We serve students, academics, professionals, businesses.</p>
-      <p>To submit your manuscript for a price quote and analysis, please provide a $21 reader fee to be deducted from the final cost or your completely edited manuscript. In the event that you choose not to leave your piece with us for editing, your $21 will still get you something of value: A one-page review of the strengths and weaknesses of your writing, where and upon what to focus, and our professional suggestions about the overall potential evolution that your manuscript might achieve.</p>
+      <h2>Complete Tutorial Services for Students K-12</h2>
+      <p><b>Parents: Give Yourselves A Break from Home Schooling</b></p>
+      <p>Parents and High School Students: At this time we offer Tutorial Services at your home or mine for students K-12. I am a PhD certified teacher at the college, university, and secondary school levels in Otsego, Delaware, and Chenango counties New York.</p>
+      <p>Expertise in Literature, English. ESL, History, Science, and Creative Writing.</p>
+      <p>We Tutor from one to three days per week, one to five hours, $25 per hour. </p>
+      <p>Please send an email for my phone number ad we can arrange a break for you today.</p>
     </div>
   )
 }

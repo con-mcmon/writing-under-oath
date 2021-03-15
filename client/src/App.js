@@ -57,21 +57,37 @@ class App extends React.Component {
 }
 
 function Home(props) {
-  const rowLength = () => {
+  const styles = function() {
     const window = props.windowWidth;
     if (window >= 1220) {
-      return 4;
+      return {
+        squares: 4,
+        title: 'title title-4',
+        subTitle: 'sub-title sub-title-4'
+      }
     } else if (window < 1220 && window > 950) {
-      return 3;
+      return {
+        squares: 3,
+        title: 'title title-3',
+        subTitle: 'sub-title sub-title-3'
+      }
     } else if (window < 950 && window > 700) {
-      return 2;
+      return {
+        squares: 2,
+        title: 'title title-2',
+        subTitle: 'sub-title sub-title-2'
+        }
     } else {
-      return 1;
+      return {
+        squares: 1,
+        title: 'title title-1',
+        subTitle: 'sub-title sub-title-1'
+      }
     }
-  }
+  }();
 
   const buildRows = () => {
-    const length = rowLength();
+    const length = styles.squares;
     let rows = [];
     for (let x = 0; x < props.content.length; x += length) {
       rows.push(<Row content={props.content.slice(x, x + length)} />)
@@ -82,10 +98,10 @@ function Home(props) {
   return (
     <div>
       <div className='header'>
-        <p className={props.windowWidth >= 1220 ? 'title' : 'title title-small'}>WritingUnderOath</p>
-        <p className={props.windowWidth >= 1220 ? 'sub-title' : 'sub-title sub-title-small'}>Serious Theories of Nonfiction</p>
+        <p className={styles.title}>WritingUnderOath</p>
+        <p className={styles.subTitle}>Serious Theories of Nonfiction</p>
       </div>
-      <hr style={{ width: '82%' }} />
+      <hr className='break-home'/>
       {buildRows()}
       <Footer />
     </div>
