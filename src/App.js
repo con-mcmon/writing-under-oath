@@ -136,8 +136,8 @@ class Square extends React.Component {
         src={this.props.image}
         alt={label}
         className='square'
-        onMouseOver={() => this.setState( {hovered: true} )}
-        onMouseOut={() => this.setState( {hovered: false} )} />
+        onMouseOver={() => this.setState({ hovered: true })}
+        onMouseOut={() => this.setState({ hovered: false })} />
     );
 
     return (

@@ -1,5 +1,6 @@
-client/src/content/accolades
-client/src/content/images
+src/content/accolades
+src/content/images
+build
 
 .ds_store
 
