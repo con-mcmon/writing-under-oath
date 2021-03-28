@@ -1,3 +1,9 @@
+src/content/accolades
+src/content/images
+build
+
+.ds_store
+
 # Logs
 logs
 *.log

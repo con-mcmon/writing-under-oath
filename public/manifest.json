@@ -1,0 +1,8 @@
+{
+  "short_name": "Writing Under Oath",
+  "name": "Writing Under Oath",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
